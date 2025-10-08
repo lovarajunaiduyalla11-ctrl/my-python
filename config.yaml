@@ -1,0 +1,3 @@
+title: "My Example Site"
+message: "This content comes from config.yaml. Replace it or override with environment variables."
+image: "/static/logo.png"
