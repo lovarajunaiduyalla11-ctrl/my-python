@@ -32,14 +32,15 @@ pipeline {
             }
         }
 
-        stage('Run tests') {
-            steps {
-                // Run tests inside ephemeral Python container
-                sh """
-                docker run --rm -v "$PWD":/app -w /app python:3.10 bash -lc "pip install -r requirements.txt && pytest -q"
-                """
-            }
-        }
+       stage('Run tests') {
+    steps {
+        // Run tests inside ephemeral Python container
+        sh """
+        docker run --rm -v "\$PWD":/app -w /app python:3.10 bash -lc "pip install -r requirements.txt && pytest -q"
+        """
+    }
+}
+
 
         stage('Build artifact') {
             steps {
